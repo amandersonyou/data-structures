@@ -1,6 +1,6 @@
 # Week 02 Assignment 
 
-### For this week's assignment, we are tasked with using node.js and cheerio to 
+For this week's assignment, we are tasked with using node.js and cheerio to 
 read one of the assigned text files from Week 01 and save the addresses from 
 that file in a variable. The addresses will be used in future assignments, so 
 storing the data in a accessible way is important.
