@@ -127,9 +127,3 @@ each row:
 
 The final result is a CSV file with each row containing an address.
 ![FinalResult](images/CSV_Success.png?raw=true "Successful CSV Output")
-
-
-On a personal note, I'm new to working with JavaScript, HTML, navigating the 
-DOM, and using js.node/Cheerio so this was a really tough assignment. I estimate
-it took me about 25 hours of bumbling through, researching and trial and error 
-to complete the assignment. I'm proud to have a usable final file!

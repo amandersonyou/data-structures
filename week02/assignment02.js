@@ -1,8 +1,9 @@
-// npm install cheerio
+/*Original version created. Updated Assignment02.1 with class review revisions.
+This version created a csv file with the requested information.*/
 
 // create constant variables for fs and cheerio
 const fs = require('fs');
-const cheerio = require('cheerio');
+const cheerio = require('cheerio'); // npm install cheerio
 
 // load the AA Map 10 text file into a variable, `content`
 // this is one of 10 text files from the AA maps
@@ -72,12 +73,3 @@ $('tr tr tr').each((i, elem) => {
     });
 
 });
-
-
-
-
-
-
-
-
-

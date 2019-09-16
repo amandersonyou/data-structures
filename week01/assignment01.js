@@ -23,7 +23,7 @@ function getUrl(i) {
     request(urls[i], function(error, response, body){
     if (!error && response.statusCode == 200) {
         // console.log ('/home/ec2-user/environment/data/m0'+i+'.txt', body);
-        fs.writeFileSync('/home/ec2-user/environment/data/m0'+(i+1)+'.txt', body);
+        fs.writeFileSync('/home/ec2-user/environment/week01/data/m0'+(i+1)+'.txt', body);
     }
     else {console.log("Request failed!")}
     })

@@ -1,7 +1,7 @@
 # Week 01 Assignment
 
-### For this week's assignment, we are tasked with requesting and saving "Meeting List Agendas"
-pages from the html links provided utilizing Node.js.
+### For this week's assignment, we are tasked with requesting and saving "Meeting List Agendas" pages from the html links provided utilizing Node.js.
+
 
 ```
 https://parsons.nyc/aa/m01.html  
@@ -16,7 +16,9 @@ https://parsons.nyc/aa/m09.html
 https://parsons.nyc/aa/m10.html 
 ```
 
+
 Starter code was provided by our Instructor, Aaron Hill:
+
 
 ```
 // npm install request
@@ -33,6 +35,7 @@ request('https://parsons.nyc/thesis-2019/', function(error, response, body){
 });
 ```
 
+
 The starter code needed to be adjusted to write into our proper directories. 
 It also needed to be formatted differently to successfully loop through all 10 
 files and overcome the asynchronous behavior of JavaScript.
@@ -40,6 +43,7 @@ files and overcome the asynchronous behavior of JavaScript.
 
 To do this, I created a function called getURL that would run the request() code.
 I set the file names to write utilizing i+1 within the file location string.
+
 
 ```
 function getUrl(i) {
@@ -53,7 +57,9 @@ function getUrl(i) {
 };
 ```
 
+
 Then I created a for loop that would call the getURL function and loop through all 10 files.
+
 
 ```
 for (var i=0; i<10; i++) {
@@ -61,6 +67,7 @@ for (var i=0; i<10; i++) {
     getUrl(i)
 }
 ```
+
 
 This resulted in saving all 10 txt files to a data folder within my week01 environment.
 I verified that the file content writed matched the appropriate html files provided by 
