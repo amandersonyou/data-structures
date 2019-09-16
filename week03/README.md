@@ -8,6 +8,7 @@ When working with the API, an API key was needed. To keep this safe while still
 being able to reference it, I saved it in a .env file and included .env in a 
 .gitignore file.
 
+
 Starter Code:
 ```
 // dependencies
@@ -47,6 +48,7 @@ async.eachSeries(addresses, function(value, callback) {
     console.log(meetingsData.length);
 });
 ```
+
 I created a version of my week02 .json file with only the street addresses & 
 commenting out the building name etc. I then read the file and parsed the data.
 I used a for-loop to go through the addresses in the week2 .json file.
@@ -108,14 +110,16 @@ async.eachSeries(addresses, function(value, callback) {
     console.log(meetingsData.length);
 });
 ```
+
 This is what the full body json looks like when requesting an address. From here
 I determined which key:value pairs I wanted to access and where they were 
 located within the json structure.
+
 ![API_Body_example](images/API_Body_example.png "Example of API body")
 
 I pulled the .JSON file into jsonbeautifier.org to examine the file more easily.
 Below are screenshots of a section of the file before and after the beautification.
+
 ![JSON_Final](images/FinalJson.png "Sample of final JSON")
+
 ![JSON_Final_Beautify](images/FinalJsonBeautify.png "Sample of beautification")
-
-
