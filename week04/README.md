@@ -8,7 +8,7 @@ hosted on AWS. We again use .env to keep our passwords private.
 
 The starter code provided includes upfront details for the PostgreSQL server, 
 a template to build from on how to create and drop tables, how to populate a 
-table with content from an array, and how to chekc our work.
+table with content from an array, and how to check our work.
 
 First, I used a for loop to go through the .json file of lats and longs from 
 last week's assignment and include only the unique locations in a new array. 
@@ -41,7 +41,9 @@ var thisQuery = "CREATE TABLE aa_event (event_id int, name varchar(100));";
 
 
 I then used INSERT INTO to populate my geolocation table with the Zone 10 location
-information I have parsed and ready.
+information I have parsed and ready. Note that I will want to add a primary key
+ID for geolocation, however I'm hoping to do this next week when adding more content
+to the tables. 
 
 ```
 async.eachSeries(addressesForDb, function(value, callback) {
