@@ -3,6 +3,13 @@
 This week, we started a new project: Process Blogs. We are using a noSQL format 
 and working with AWS service DynamoDB to format our databases. 
 
+First, I mapped out the details of what I'd like in my database and their 
+relationships to each other. I chose to have everything on the same hierarchical 
+level, using project name as the partition key, and date as the sort key.
+
+![Process Blog Structure](images/ProcessBlogStructure.png "Process Blog Structure")
+
+
 I chose to use the project name for my primary key (ex. AA Meeting Map) and date
 as my sort key. In addition to these two, I added objects to log the task type 
 (ex. Gather, Clean, Structure, Visualize), and add a write up of my thoughts from
@@ -14,6 +21,7 @@ I tested to make sure the format of the entry looked correct before pushing it
 to the database. Below is a visual of the test console log:
 
 ![Blog Entry Console Log](images/BlogConsoleLog.png "Blog Entry Console Log")
+
 
 I used AWS SDK to add the blog entries to my Dynamo database. By utilizing the 
 async.forEach function with a callback set to 1000, I can loop through the 
