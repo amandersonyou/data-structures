@@ -1,6 +1,6 @@
 const { Client } = require('pg'); // npm install dotenv
 const dotenv = require('dotenv'); // npm install dotenv
-dotenv.config();
+dotenv.config({path: '/home/ec2-user/environment/.env'});
 
 // AWS RDS POSTGRESQL INSTANCE
 var db_credentials = new Object();

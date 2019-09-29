@@ -1,8 +1,8 @@
 const { Client } = require('pg');
 var async = require('async');
 var fs = require('fs');
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv'); // npm install dotenv
+dotenv.config({path: '/home/ec2-user/environment/.env'});
 
 var db_credentials = new Object();
 db_credentials.user = 'amandersonyou';

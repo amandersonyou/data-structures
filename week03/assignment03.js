@@ -3,6 +3,8 @@ var request = require('request'); // npm install request
 var async = require('async'); // npm install async
 var fs = require('fs');
 const dotenv = require('dotenv'); // npm install dotenv
+dotenv.config({path: '/home/ec2-user/environment/.env'});
+
 
 // TAMU api key, keeping it safe & hidden!
 dotenv.config();
