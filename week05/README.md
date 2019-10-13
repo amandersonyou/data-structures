@@ -30,3 +30,17 @@ entries with no errors.
 Final view of items in the database:
 ![Database With Entries](images/BlogDatabase.png "Database with entries")
 
+
+# UPDATE 10/12/19:
+
+I played around with creating a new table with the sort key of date being a 
+number instead of a string. I am still struggling with this, and after many errors,
+I am using a classmate's recommendation in Piazza (class chat) to set date to a 
+string and the set it to .toISOString. I did this and created a new table that I 
+was then able to query in week06's assignment. Below are visuals showing a 
+sample of the console log, and the updated table view.
+
+![Updated Console Log](images/updatedConsolelog.png "sample view")
+
+![Updated DynamoDB Table](images/updatedDatatable.png "updated table")
+
