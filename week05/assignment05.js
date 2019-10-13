@@ -1,3 +1,5 @@
+// SEE ASSIGNMENT05B FOR UPDATED VERSION, CREATED NEW TABLE DURING WEEK06
+
 //npm install aws-sdk
 
 /* Set up structure for process blog entries. Using the project name as my 
