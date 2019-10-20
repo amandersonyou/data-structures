@@ -32,10 +32,10 @@ $('td').each(function(i, elem) {
 });
 
         
-// console.log(meetingData);
+console.log(meetingData);
 
 // // Write the file as a JSON file to access later using geo services.
-fs.writeFileSync('wk7_AddressesOnly_m09.json', JSON.stringify(meetingData));
+// fs.writeFileSync('wk7_AddressesOnly_m09.json', JSON.stringify(meetingData));
 
 
 
