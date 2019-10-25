@@ -1,5 +1,7 @@
 # Week 04 Assignment 
 
+NOTE: updated files with week07 full zone parsing.
+
 For this week's assignment, we're creating SQL database tables and populating 
 the location table with our zone geolocation information that we have gathered.
 
@@ -70,3 +72,4 @@ client.query(thisQuery, (err, res) => {
 Shown in this beautiful console log:
 
 ![Geolocation Array Console Log](images/GeolocationTableArray.png "Geolocation Array output")
+
