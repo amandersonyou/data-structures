@@ -107,7 +107,7 @@ client.query(thisQuery, (err, res) => {
 
 
 
-// var meetingData = [];
+// Notes below for future reference.
 
 /*Find the table data cell (td) that contains a unique identifier within style.
 Use this to find, split and trim the event name. Create an object for each meeting 
