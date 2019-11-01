@@ -1,4 +1,4 @@
-# Week 09 Assignments
+# Week 09 Assignment
 
 For week 9, I set up a database using PostgreSQL to record the sensor value 
 (temperature) and the datetime. I have it recording ever minute because of the short 
