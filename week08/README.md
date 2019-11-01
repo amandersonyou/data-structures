@@ -10,8 +10,8 @@ this placement being near the bathroom, front door entry, and a shady window wil
 allow. Sketches and descriptions are below placement images.
 
 
-![Placement of Sensor](images/placement_1.jpg "placement 1")
-![Placement of Sensor](images/placement_2.jpg "placement 2")
+![Placement of Sensor](images/placement_1.png "placement 1")
+![Placement of Sensor](images/placement_2.png "placement 2")
 
 Sketch concept 1:
 This concept will have 12 lines drawn on either side of a middle line dividing AM 
