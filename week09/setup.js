@@ -16,7 +16,9 @@ const client = new Client(db_credentials);
 client.connect();
 
 // Sample SQL statement to create a table: 
-var thisQuery = "CREATE TABLE sensorData ( sensorValue double precision, sensorTime timestamp DEFAULT current_timestamp );";
+// var thisQuery = "CREATE TABLE sensorData ( sensorValue double precision, sensorTime timestamp DEFAULT current_timestamp );";
+// var thisQuery = "CREATE TABLE sensorDataNew ( sensorValue double precision, last_heard timestamp with time zone );";
+// var thisQuery = "DROP TABLE sensorDataNew;"; 
 
 client.query(thisQuery, (err, res) => {
     console.log(err, res);

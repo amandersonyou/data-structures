@@ -25,15 +25,7 @@ var getAndWriteData = function() {
         // Store sensor value(s) in a variable
         var sv = JSON.parse(body).result;
 // console.log(sv);
-        
-        // Convert 1/0 to TRUE/FALSE for the Postgres INSERT INTO statement
-        // var sv_mod; 
-        // if (sv == 1) {
-        //     sv_mod = "TRUE";
-        // }
-        // else if (sv == 0) {
-        //     sv_mod = "FALSE";
-        // }
+
 
         // Connect to the AWS RDS Postgres database
         const client = new Client(db_credentials);
@@ -41,6 +33,8 @@ var getAndWriteData = function() {
 
         // Construct a SQL statement to insert sensor values into a table
         var thisQuery = "INSERT INTO sensorData VALUES (" + sv + ", DEFAULT);";
+        // var thisQuery = "INSERT INTO sensorDataNew VALUES (" + sv + ", ::TIMESTAMP WITH TIME ZONE);";
+
         console.log(thisQuery); // for debugging
 
         // Connect to the AWS RDS Postgres database and insert a new row of sensor values
