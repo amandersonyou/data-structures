@@ -2,6 +2,32 @@
 
 var express = require('express'), // npm install express
     app = express();
+    
+var landingPage = `<h1>Welcome to my three projects!</h1>
+<ul>
+<li><a href="/sensor">Sensor Data.</a></li>
+<li><a href="/ProcessBlogAAY">Process Blog Data.</a></li>
+<li><a href="/aamap">AA Map Data.</a></li>
+</ul>
+`;
+
+app.get('/', function(req, res) {
+   res.send(landingPage);
+});
+
+// app.get('/sensor', function(req, res) {
+//     res.send('<h3>this is the page for my sensor data</h3>');    
+// });
+
+// serve static files in /public
+app.use(express.static('public'));
+
+// listen on port 8080
+app.listen(8080, function() {
+    console.log('Server listening...');
+});
+
+
 
 // Details for process blog data
 var AWS = require('aws-sdk');
@@ -22,7 +48,7 @@ db_credentials.password = process.env.AWSRDS_PW;
 db_credentials.port = 5432;
 
 
-// Senson Data Request
+// Sensor Data Request
 app.get('/sensor', function(req, res1) {
     const client = new Client(db_credentials);
     client.connect();
@@ -85,34 +111,11 @@ app.get('/ProcessBlogAAY', function(req, res) {
             console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
         } else {
             console.log("Query succeeded.");
-            // data.Items.forEach(function(item) {
-            //     console.log("***** ***** ***** ***** ***** \n", item);
-            // }); 
             res.send(data.Items[1]);
-    // can use .project etc. after index call to specify what you're printing
+    // can use .project etc. after index call to specify what you're requesting
         }
     });
     
     // res.send('data.Items.forEach(function(item)');
 });
 
-
-app.get('/', function(req, res) {
-  res.send(`<h1>Welcome to my three projects!</h1>
-            <ul>
-                <li><a href="/sensor">Sensor Data.</a></li>
-                <li><a href="/ProcessBlogAAY">Process BlogData.</a></li>
-                <li><a href="/aamap">AA Map Data.</a></li>
-                </ul>`);
-});
-
-
-// serve static files in /public
-// might make a directory in public with CSS style sheets 
-app.use(express.static('public'));
-
-// listen on port 8080
-app.listen(8080, function() {
-    console.log('Server listening...');
-
-});
