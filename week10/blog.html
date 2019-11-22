@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='styles.css'>
+    </head>
+    <body>
+    <h1> Dog with a Blog </h1>
+    {{title}}<br>  
+    {{body}}<br>
+    {{#entries}}
+        <div class="topic">
+            <h1> {{project}}</h1>
+        <div class="date">
+            {{date}}
+            </div>
+        </div>
+    {{/entries}}
+    </body>
+
+</html>
+
