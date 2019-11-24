@@ -13,13 +13,6 @@ var landingPage = `<h1>Welcome to my three projects!</h1>
 </ul>
 `;
 
-// app.get('/', function(req, res) {
-//   res.send(landingPage);
-// });
-
-// app.get('/sensor', function(req, res) {
-//     res.send('<h3>this is the page for my sensor data</h3>');    
-// });
 
 // serve static files in /public
 app.use(express.static('public'));
@@ -28,7 +21,6 @@ app.use(express.static('public'));
 app.listen(8080, function() {
     console.log('Server listening...');
 });
-
 
 
 // Details for process blog data
@@ -50,34 +42,8 @@ db_credentials.password = process.env.AWSRDS_PW;
 db_credentials.port = 5432;
 
 
-// Sensor Data Request
-app.get('/sensor', function(req, res) {
-    var output = {title: 'Temperature Sensor Visualization', body: 'example content'};
 
-    const client = new Client(db_credentials);
-        client.connect();
-    
-    var thisQuery = "SELECT * FROM sensorData;";
-
-    client.query(thisQuery, (err, results) => {
-        if (err) {throw err}
-        else {
-            console.log(results.rows);
-            fs.readFile('./sensor.html', 'utf8', (error, data) => {
-                var template = handlebars.compile(data);
-                output.records = results.rows
-                var html = template(output);
-                res.send(html);
-            })
-            client.end();
-        }
-    });
-
-});
-
-
-
-// // AA Map Data Request
+// AA Map Data Request
 app.get('/aamap', function(req, res) {
     var output = {title: 'AA Map Visualization', body: 'example content'};
 
@@ -105,8 +71,8 @@ app.get('/aamap', function(req, res) {
 
 
 
-// Process Blog
 
+// Process Blog
 app.get('/blog', function(req, res) {
     var output = {title: 'Process Blog', body: 'example content'};
     var dynamodb = new AWS.DynamoDB();
@@ -152,3 +118,41 @@ app.get('/blog', function(req, res) {
     });
 
 });
+
+
+
+// Temperature Sensor
+app.get('/sensor', function(req, res) {
+    var output = {title: 'Temperature Sensor Visualization', body: 'example content'};
+
+    const client = new Client(db_credentials);
+        client.connect();
+    
+    var thisQuery = "SELECT * FROM sensorData;";
+
+    client.query(thisQuery, (err, results) => {
+        if (err) {throw err}
+        else {
+            console.log(results.rows);
+            fs.readFile('./sensor.html', 'utf8', (error, data) => {
+                var template = handlebars.compile(data);
+                output.records = results.rows
+                var html = template(output);
+                res.send(html);
+            })
+            client.end();
+        }
+    });
+
+});
+
+// Sensor Data Request
+// app.get('/sensor', function(req, res) {
+//     res.send(`<h3>Temperature data</h3>
+//     <h4>Testing</h4>
+//     <p>SELECT EXTRACT(DAY FROM sensorTime) as sensorday, <br>
+//              AVG(sensorValue::int) as num_obs <br>
+//              FROM sensorData <br>
+//              GROUP BY sensorday <br>
+//              ORDER BY sensorday;</p>`);
+// }); 
