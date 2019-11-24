@@ -51,64 +51,66 @@ db_credentials.port = 5432;
 
 
 // Sensor Data Request
-// app.get('/sensor', function(req, res) {
-//     var output = {title: 'Temperature Sensor Visualization', body: 'example content'};
+app.get('/sensor', function(req, res) {
+    var output = {title: 'Temperature Sensor Visualization', body: 'example content'};
 
-//     const client = new Client(db_credentials);
-//         client.connect();
+    const client = new Client(db_credentials);
+        client.connect();
     
-//     var thisQuery = "SELECT * FROM sensorData;";
+    var thisQuery = "SELECT * FROM sensorData;";
 
-//     client.query(thisQuery, (err, results) => {
-//         if (err) {throw err}
-//         else {
-//             console.log(results.rows);
-//             fs.readFile('./sensor.html', 'utf8', (error, data) => {
-//                 var template = handlebars.compile(data);
-//                 output.records = results.rows
-//                 var html = template(output);
-//                 res.send(html);
-//             })
-//             client.end();
-//         }
-//     });
+    client.query(thisQuery, (err, results) => {
+        if (err) {throw err}
+        else {
+            console.log(results.rows);
+            fs.readFile('./sensor.html', 'utf8', (error, data) => {
+                var template = handlebars.compile(data);
+                output.records = results.rows
+                var html = template(output);
+                res.send(html);
+            })
+            client.end();
+        }
+    });
 
-// });
+});
 
 
 
 // // AA Map Data Request
-// app.get('/aamap', function(req, res) {
-//     var output = {title: 'AA Map Visualization', body: 'example content'};
+app.get('/aamap', function(req, res) {
+    var output = {title: 'AA Map Visualization', body: 'example content'};
 
-//     const client = new Client(db_credentials);
-//         client.connect();
+    const client = new Client(db_credentials);
+        client.connect();
     
     
-//     var thisAAQuery = "SELECT * FROM aa_event;";
+    var thisAAQuery = "SELECT aa_location.lat, aa_location.long, aa_location.building FROM aa_location;";
+    //INNER JOIN aa_event ON aa_location.locationid = aa_event.locationid;
 
-//     client.query(thisAAQuery, (err, results) => {
-//         if (err) {throw err}
-//         else {
-//             console.log(res.rows);
-//             fs.readFile('./aamap.html', 'utf8', (error, data) => {
-//                 var template = handlebars.compile(data);
-//                 output.meetings = results.rows
-//                 var html = template(output);
-//                 res.send(html);
-//             })
-//             client.end();
-//         }
-//     });
-// });
+    client.query(thisAAQuery, (err, results) => {
+        if (err) {throw err}
+        else {
+            console.log(res.rows);
+            fs.readFile('./aamap.html', 'utf8', (error, data) => {
+                var template = handlebars.compile(data);
+                output.meetings = results.rows
+                var html = template(output);
+                res.send(html);
+            })
+            client.end();
+        }
+    });
+});
+
 
 
 // Process Blog
 
-
 app.get('/blog', function(req, res) {
     var output = {title: 'Process Blog', body: 'example content'};
     var dynamodb = new AWS.DynamoDB();
+    
     
     var params = {
         TableName : "ProcessBlogAAY",
@@ -118,56 +120,35 @@ app.get('/blog', function(req, res) {
             ,"#date" : "date"
         },
         ExpressionAttributeValues: { // the query values
+            ":project": {S: "Process Blog"},
+            ":minDate": {S: new Date("2019-09-20").toISOString()},
+            ":maxDate": {S: new Date("2019-12-16").toISOString()}
+        },
+        ExpressionAttributeValues: { // the query values
+            ":project": {S: "Temperature Sensor"},
+            ":minDate": {S: new Date("2019-10-23").toISOString()},
+            ":maxDate": {S: new Date("2019-12-16").toISOString()}
+        },
+        ExpressionAttributeValues: { // the query values
             ":project": {S: "AA Meeting Map"},
             ":minDate": {S: new Date("2019-08-30").toISOString()},
-            ":maxDate": {S: new Date("2019-09-23").toISOString()}
-        }
+            ":maxDate": {S: new Date("2019-12-16").toISOString()}
+        },
     };
-    
     
     dynamodb.query(params, function(err, results) {
         if (err) {
             console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
         } else {
-            //console.log(results.rows);
+            console.log(results.rows);
             fs.readFile('./blog.html', 'utf8', (error, data) => {
                 var template = handlebars.compile(data);
                 output.entries = results.Items
                 var html = template(output);
                 res.send(html);
             })
-            console.log(results.Items[1].project)
-            // client.end();
+            console.log(results.Items)
         }
     });
 
 });
-
-// app.get('/ProcessBlogAAY', function(req, res) {
-//     var dynamodb = new AWS.DynamoDB();
-//     var params = {
-//         TableName : "ProcessBlogAAY",
-//         KeyConditionExpression: "#project = :project and #date between :minDate and :maxDate", // the query expression
-//         ExpressionAttributeNames: { // name substitution, used for reserved words in DynamoDB
-//             "#project" : "project"
-//             ,"#date" : "date"
-//         },
-//         ExpressionAttributeValues: { // the query values
-//             ":project": {S: "AA Meeting Map"},
-//             ":minDate": {S: new Date("2019-08-30").toISOString()},
-//             ":maxDate": {S: new Date("2019-09-23").toISOString()}
-//         }
-//     };
-//     dynamodb.query(params, function(err, data) {
-//         if (err) {
-//             console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
-//         } else {
-//             console.log("Query succeeded.");
-//             res.send(data.Items[1]);
-//     // can use .project etc. after index call to specify what you're requesting
-//         }
-//     });
-    
-    // res.send('data.Items.forEach(function(item)');
-// });
-

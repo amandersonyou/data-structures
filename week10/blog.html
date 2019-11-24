@@ -4,15 +4,21 @@
         <link rel='stylesheet' href='styles.css'>
     </head>
     <body>
-    <h1> Dog with a Blog </h1>
+    <h1> Cat with a Blog </h1>
     {{title}}<br>  
     {{body}}<br>
     {{#entries}}
         <div class="topic">
-            <h1> {{project}}</h1>
+            <h2>{{project.S}}</h1>
+        </div>
+        <div class="task">
+            <h3>{{task.SS}}</h2>
+        </div>
         <div class="date">
-            {{date}}
-            </div>
+            <h4>{{date.S}}</h3>
+        </div>
+        <div class="content">
+            <p>{{thoughts.S}}</p>
         </div>
     {{/entries}}
     </body>
