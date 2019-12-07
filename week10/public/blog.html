@@ -1,27 +1,30 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel='stylesheet' href='styles.css'>
-    </head>
-    <body>
-    <h1> Amanda's Process Blog </h1>
-    {{title}}<br>  
-    {{body}}<br>
-    {{#entries}}
-        <div class="topic">
-            <h2>{{project.S}}</h1>
-        </div>
-        <div class="task">
-            <h3>{{task.SS}}</h2>
-        </div>
-        <div class="date">
-            <h4>{{date.S}}</h3>
-        </div>
-        <div class="content">
-            <p>{{thoughts.S}}</p>
-        </div>
-    {{/entries}}
-    </body>
+<head>
+    <!-- You can link a stylesheet just for this blog.html file to use or use the same one that was used in index.html  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='blog.css'/>
+</head>
+<body>
+<div>
+    
+<select class="custom-select" name="project">
+    <option selected>Blogpost Category</option>
+    <option value="Process Blog">Process Blog</option>
+    <option value="Temperature Sensor">Temperature Sensor</option>
+    <option value="AA Meeting Map">Alcoholics Anonymous Meeting Map</option>
 
-</html>
+</select>
+    
+  
+
+<div id="anchor"></div>
+    
+    <!-- This div is where we will put information using the blog.js file -->
+    <div class="blogposts"></div>
+</div>
+<!-- You must include the full version of jquery for ajax to work. The version included with bootstrap is the lite version -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="blog.js"></script>
+
+</body>
 
