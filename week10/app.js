@@ -35,7 +35,7 @@ app.get('/aamap', function(req, res1) {
 const client = new Client(db_credentials);
 client.connect();
 
-var thisAAQuery = "SELECT lat, long, address, building FROM aa_location;";
+var thisAAQuery = "SELECT lat, long, address, building FROM aa_location INNER JOIN aa_event ON aa_location.locationid=aa_event.locationid WHERE day='Mondays'";
 client.query(thisAAQuery, (err, res) => {
     console.log(err, res.rows);
 
