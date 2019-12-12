@@ -2,6 +2,9 @@ html {
     background-color: #F4CC21;
     
 }
+body {
+  background-color: #F4CC21;
+}
 
 .header {
     background-image: url(https://raw.githubusercontent.com/amandersonyou/data-structures/master/week10/assets/HeaderDesign.png);
@@ -13,7 +16,8 @@ html {
 }
 
 .description {
-    padding: 40px;
+    padding-left: 40px;
+    padding-top: 20px;
     text-align: left;
     background: #F4CC21;
     color: white;
@@ -22,12 +26,36 @@ html {
 
 .links {
     padding: 40px;
-    text-align: center;
-    background: #F4CC21;
-    color: white;
+    text-align: left;
     font-size: 15px;
 }
 
+a:link, a:visited {
+  background-color: black;
+    /*background-color: #f8dd6a;*/
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: white;
+  color: black;
+}
+
+/*.column {*/
+/*    float: right;*/
+    /*width: 50%;*/
+/*    padding-left: 40px;*/
+/*    background: #F4CC21;*/
+/*}*/
+/*.row::after {*/
+/*  content: "";*/
+/*  clear: both;*/
+/*  display: table;*/
+/*}*/
 
 #mapid { height: 760px; }
 
