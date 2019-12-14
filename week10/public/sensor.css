@@ -1,0 +1,59 @@
+/* Remove? --------------- use styles.css for all */
+
+body {
+    background-color: #F4CC21;
+}
+.header {
+    background-image: url(https://raw.githubusercontent.com/amandersonyou/data-structures/master/week10/assets/HeaderDesign.png);
+    padding: 40px;
+    text-align: left;
+    color: black;
+    font-size: 60px;
+}
+
+.projectTitle {
+    padding: 20px;
+    color: black;
+}
+
+a:link, a:visited {
+  background-color: black;
+    /*background-color: #f8dd6a;*/
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: white;
+  color: black;
+}
+
+
+
+h2 {
+    font-size: 2rem;
+    /*padding-left: 20px;*/
+    padding-top: 20px;
+    color: black;
+}
+
+h3 {
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
+h4 {
+    font-size: 1.25rem;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+p {
+    padding-left: 20px;
+    font-size: 1rem;
+    width: 75%;
+}
+

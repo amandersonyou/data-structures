@@ -106,6 +106,11 @@ client.connect();
 
 // Sample SQL statement to query the entire contents of a table: 
 var secondQuery = "SELECT * FROM sensorData;"; // print the number of rows
+// var otherQuery = `SELECT EXTRACT(DAY FROM sensorTime) as sensorday,
+//          AVG(sensorValue::int) as num_obs
+//          FROM sensorData
+//          GROUP BY sensorday
+//          ORDER BY sensorday;`;
 
 console.log('test');
 
@@ -120,6 +125,26 @@ client.query(secondQuery, (err, res) => {
 
 });
 
+//     // Connect to the AWS RDS Postgres database
+//     const client = new Pool(db_credentials);
+
+//     // SQL query 
+//     var q = `SELECT EXTRACT(DAY FROM sensorTime) as sensorday,
+//              AVG(sensorValue::int) as num_obs
+//              FROM sensorData
+//              GROUP BY sensorday
+//              ORDER BY sensorday;`;
+
+//     client.connect();
+//     client.query(q, (qerr, qres) => {
+//         if (qerr) { throw qerr }
+//         else {
+//             res.end(template({ sensordata: JSON.stringify(qres.rows)}));
+//             client.end();
+//             console.log('1) responded to request for sensor graph');
+//         }
+//     });
+// }); 
 
 
 // serve static files in /public

@@ -17,7 +17,7 @@ function getResults(){
     //this is AJAX and it calls the /blog endpoint on the server(in app.js) and sends the paramters object.
     $.get( '/sensor',parameters, function(d) {
 
-        // When the server returns information, the returned data (hanlebars html) is added to the blogpost DIV.
+        // When the server returns information, the returned data (handlebars html) is added to the blogpost DIV.
         // Alternatively, if the server is sending back JSON data, you can use it to create a map or graph etc.
         console.log(d)
         data = d;
@@ -36,8 +36,8 @@ function init(){
 init()
     // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 1000 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 1400 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -60,7 +60,7 @@ function draw(){
     
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return +d.sensorvalue; })])
+      .domain([75, d3.max(data, function(d) { return +d.sensorvalue; })])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
@@ -68,16 +68,27 @@ function draw(){
     // Add the line
     svg.append("path")
       .datum(data)
-    //   .filter(function(d) { return d3.timeParse('%Y-%m-%dT%H:%M:%S.%LZ')(d.sensortime) < new Date() })
       .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 1.5)
+      .attr("stroke", "black")
+      .attr("stroke-width", 1.25)
       .attr("d", d3.line()
         .x(function(d) { return x(d3.timeParse('%Y-%m-%dT%H:%M:%S.%LZ')(d.sensortime)) })
         .y(function(d) { return y(d.sensorvalue) })
         .curve(d3.curveMonotoneX) // apply smoothing to the line
-
         )
-
-
+    svg.append("text")
+      .attr("class", "x label")
+      .attr("text-anchor", "end")
+      .attr("x", width)
+      .attr("y", height - 6)
+      .text("Date");
+    
+    svg.append("g")
+      .attr("class", "y axis")
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "-3em")
+      .style("text-anchor", "end")
+      .text("Interior Temperature (Degrees Fahrenheit)");
 }

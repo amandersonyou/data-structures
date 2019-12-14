@@ -4,28 +4,32 @@ html {
 }
 body {
   background-color: #F4CC21;
+  color: black;
 }
 
 .header {
     background-image: url(https://raw.githubusercontent.com/amandersonyou/data-structures/master/week10/assets/HeaderDesign.png);
     padding: 40px;
     text-align: left;
-    /*background: #F4CC21;*/
     color: black;
     font-size: 60px;
 }
 
+/*.projectTitle {*/
+    /*padding: 20px;*/
+/*    color: black;*/
+/*}*/
+
 .description {
-    padding-left: 40px;
-    padding-top: 20px;
+    /*padding: 20px;*/
     text-align: left;
     background: #F4CC21;
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
 .links {
-    padding: 40px;
+    /*padding: 40px;*/
     text-align: left;
     font-size: 15px;
 }
@@ -45,17 +49,46 @@ a:hover, a:active {
   color: black;
 }
 
-/*.column {*/
-/*    float: right;*/
-    /*width: 50%;*/
-/*    padding-left: 40px;*/
-/*    background: #F4CC21;*/
-/*}*/
-/*.row::after {*/
-/*  content: "";*/
-/*  clear: both;*/
-/*  display: table;*/
-/*}*/
+h2 {
+    font-size: 1.5rem;
+    /*padding-left:5 20px;*/
+    padding: 20px;
+    padding-top: 20px
+}
+
+h3 {
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
+h4 {
+    font-size: 1.25rem;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+p {
+    padding-left: 20px;
+    font-size: 1rem;
+    width: 75%;
+}
+
+.blogposts {
+    display: block;
+
+}
+
+.dropdown {
+    display: block;
+}
+
+.custom-select {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    width: 350px;
+    outline: none !important;
+}
 
 #mapid { height: 760px; }
 
