@@ -11,7 +11,7 @@ Visit my url: http://54.196.189.175:8080/
 
 ![View of Home Screen](assets/HomeSS.png "Home Screen")
 
-##See the video walkthrough of my final site:
+## See the video walkthrough of my final site:
 [![Final video walkthrough](assets/VideoRecap.png)](https://vimeo.com/379622722 "Data Structures Final Video - Click to Watch!")
 
 
@@ -24,7 +24,7 @@ README documents within this repository.
 The final product displays a meeting map that can be filtered by day of the week, 
 with map markers that can be selected to display the building name, address, meeting 
 type, any special interests (ex. LGBTQ), and the start and end times for each meeting.
-To do this, I used SQL, JavaScript (including jQuery & AJAX), HTML and CSS.
+To do this, I used SQL, JavaScript (including jQuery & AJAX), Leaflet, HTML and CSS.
 
 ![View of AA Meeting Map Page](assets/AAMapSS.png "AAMap Screen")
 
@@ -40,7 +40,7 @@ this D3.js line graph.
 
 
 ### Process Blog:
-The process blog allowed me the opportunity to build and update date within a Dynamo 
+The process blog allowed me the opportunity to build and update data within a Dynamo 
 Database NoSQL structure. I chose to organize my blog using the project type as a primary 
 key and the date as a sorting method. I structured the data for my interface using Handlebars, 
 allowing for consistent formatting for each entry.
