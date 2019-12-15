@@ -30,10 +30,10 @@ function getResults(val) {
         
         data.forEach(item => {
             // console.log(item.starttime);
-            let itemSpecialInterest = item.specialinterest ? '<br>' + item.specialinterest : '';
-            let itemMeetingType = item.meetingtype ? '<br>' + item.meetingtype : '';
-            let itemMeetingAddress = item.address ? '<br>' + item.address : '';
-            let itemMeetingBuilding = item.building ? '<br>' + item.building : '';
+            let itemSpecialInterest = item.specialinterest ? '<br>' + "Special Interest: " + item.specialinterest : '';
+            let itemMeetingType = item.meetingtype ? '<br>' + "Meeting Type: " + item.meetingtype : '';
+            let itemMeetingAddress = item.address ? '<br>' + "Address: " + item.address : '';
+            let itemMeetingBuilding = item.building ? '<br>' + "Building: " + item.building : '';
             let itemStartTime = item.starttime ? '<br>' + item.starttime : '';
             let itemEndTime = item.endtime ? "- " + item.endtime : '';
             L.marker( [item.lat, item.long] ).bindPopup(itemMeetingBuilding + itemMeetingAddress + itemMeetingType + itemSpecialInterest + itemStartTime + itemEndTime).addTo(allMarkers);
