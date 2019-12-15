@@ -92,3 +92,10 @@ p {
 
 #mapid { height: 760px; }
 
+.container-fluid {
+    padding: 40px;
+}
+
+.photo {
+    padding: 40px;
+}

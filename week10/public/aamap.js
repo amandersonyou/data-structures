@@ -19,8 +19,9 @@ function getResults(){
         // Alternatively, if the server is sending back JSON data, you can use it to create a map or graph etc.
         console.log(data)
         
+        // var popupContent= (item.address);
         data.forEach(item => {
-            L.marker( [item.lat, item.long] ).bindPopup(item.address).addTo(map);
+            L.marker( [item.lat, item.long] ).bindPopup(item.building + " " + "<br>" + item.address +"<br"+ item.startTime + "-" + item.endTime).addTo(map);
         })
     });
 }
@@ -29,7 +30,7 @@ function getResults(){
 function init(){
     getResults()
     
-        map = L.map('map').setView([40.756902, -73.980421], 12);
+        map = L.map('map').setView([40.756902, -73.980421], 13);
 
         // load a set of map tiles – choose from the different providers demoed here:
         // https://leaflet-extras.github.io/leaflet-providers/preview/
