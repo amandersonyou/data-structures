@@ -52,55 +52,31 @@
     
     <!--<input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/>-->
     
-  <form>
+  <form method = "POST">
+    <select class="day" id="day" name="day">
+       <option name="sunday" value="Sundays">Sundays</option>
+       <option name="monday" value="Mondays">Mondays</option>
+       <option name="tuesday" value="Tuesdays">Tuesdays</option>
+       <option name="wednesday" value="Wednesdays">Wednesdays</option>
+       <option name="thursday" value="Thursdays">Thursdays</option>
+       <option name="friday" value="Fridays">Fridays</option>
+       <option name="saturday" value="Saturdays">Saturdays</option>
+     </select> 
     <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck1">
-      <label class="custom-control-label" for="customCheck1">Sunday</label>
-    </div>
-    
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck2">
-      <label class="custom-control-label" for="customCheck2">Monday</label>
-    </div>
-    
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck3">
-      <label class="custom-control-label" for="customCheck3">Tuesday</label>
-    </div>
-    
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck4">
-      <label class="custom-control-label" for="customCheck4">Wednesday</label>
-    </div>
-    
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck5">
-      <label class="custom-control-label" for="customCheck5">Thursday</label>
-    </div>
-    
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck6">
-      <label class="custom-control-label" for="customCheck6">Friday</label>
-    </div>
-    
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="customCheck7">
-      <label class="custom-control-label" for="customCheck7">Saturday</label>
-    </div>
   </form>
      <div class="meetings">
        
     <div id="map"></div>
       
     </div>
-  
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.js"></script>
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- <script type="text/javascript" src="aamap.js"></script>
-    
+
+  <script type="text/javascript" src="aamap.js"></script>
   </body>
 </html>
 
@@ -141,5 +117,5 @@
 <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
 <!--<script src="aamap.js"></script>-->
 
-<!--</body>-->
+</body>
 

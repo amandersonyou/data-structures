@@ -5,6 +5,7 @@ var express = require('express'), // npm install express
 var handlebars = require('handlebars')
 var fs = require('fs')
 var moment = require('moment');
+var bodyParser = require('body-parser');
 app.use(express.static('public'));
 
 // Details for process blog data
@@ -31,20 +32,21 @@ db_credentials.port = 5432;
 // AA Map ----------------------------------------
 app.get('/aamap', function(req, res1) {
     
-// Connect to the AWS RDS Postgres database
-const client = new Client(db_credentials);
-client.connect();
-
-var thisAAQuery = "SELECT lat, long, address, building FROM aa_location INNER JOIN aa_event ON aa_location.locationid=aa_event.locationid WHERE day='Mondays'";
-client.query(thisAAQuery, (err, res) => {
-    console.log(err, res.rows);
-
-    res1.send(res.rows)
+    // Connect to the AWS RDS Postgres database
+    // aaQuery(res,res1,"Mondays");
+    var thisAAQuery = "SELECT lat, long, address, building, day, startTime, endTime, meetingtype, specialinterest FROM aa_location INNER JOIN aa_event ON aa_location.locationid=aa_event.locationid WHERE day='"+req.query.day+"'";
+    const client = new Client(db_credentials);
+    client.connect();
+    client.query(thisAAQuery, (err, res) => {
+        console.log(err, res.rows);
     
-    client.end();
-});
+        res1.send(res.rows)
+        
+        client.end();
+    });
 
 });
+
 
 
 
