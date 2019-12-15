@@ -23,14 +23,12 @@ body {
     font-size: 20px;
 }
 
-select {
-    padding-left: 20px;
-}
-
-.homeNav {
-    color: white;
+.links {
+    /*padding: 40px;*/
+    text-align: left;
     font-size: 15px;
     background-color: black;
+    color: white;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -53,6 +51,7 @@ h4 {
     font-size: 1.25rem;
     padding-bottom: 20px;
     padding-left: 20px;
+    width: 65%;
 }
 
 p {
@@ -61,6 +60,9 @@ p {
     width: 75%;
 }
 
+select {
+    padding-bottom: 30px;
+}
 #map {
     height: 800px;
     width: 800px;
@@ -70,6 +72,8 @@ p {
     width: 300px;
 }
 
-#mapid { height: 760px; }
+#mapid { 
+    height: 760px;
+}
 
 

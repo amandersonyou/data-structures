@@ -26,6 +26,7 @@ body {
     background: #F4CC21;
     color: black;
     font-size: 20px;
+    width: 65%;
 }
 
 .links {
@@ -97,5 +98,5 @@ p {
 }
 
 .photo {
-    padding: 40px;
+    padding: 20px;
 }
