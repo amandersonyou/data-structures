@@ -73,9 +73,8 @@ var params = {
     
     
   dynamodb.query(params, function(err, data) {
-      if (err) {
-          console.log('there was an error')
-      } else {
+      if (err) {throw err}
+      else {
           
           output.blogpost = [];
           data.Items.forEach(item => {
